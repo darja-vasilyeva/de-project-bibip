@@ -18,7 +18,9 @@ class Car(BaseModel):
     price: Decimal
     date_start: datetime
     status: CarStatus
-
+    # def __init__(self, v: str) -> None:
+    def __lt__(self, other):
+        return self.vin < other.vin
     def index(self) -> str:
         return self.vin
 
